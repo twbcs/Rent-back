@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.equalHeight
+//= require jquery.tablesorter
+//= require ckeditor/init
+//= require hideshow
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+        $('.column').equalHeight();
+});
