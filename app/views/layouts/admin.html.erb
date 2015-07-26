@@ -4,10 +4,19 @@
   <meta charset="utf-8">
   <title>後臺管理系統</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= render 'meta'%>
 </head>
 <body>
-  <%= yield %>
+  <%= render 'header' %>
+  <div class="all">
+
+    <%= render 'aside' %>
+    <section class="column" id="main">
+    <%= yield %>
+    <div class="clear"></div>
+    <div class="spacer"></div>
+    </section>
+  </div>
+
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= yield :script %>
