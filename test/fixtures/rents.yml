@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  picture: MyString
+  sort: 1
+  brand: MyString
+  model_no: MyString
+  color: MyString
+  displacement: MyString
+  pay: MyString
+  description: MyText
+  cartype: 1
+  period: 1
+
+two:
+  picture: MyString
+  sort: 1
+  brand: MyString
+  model_no: MyString
+  color: MyString
+  displacement: MyString
+  pay: MyString
+  description: MyText
+  cartype: 1
+  period: 1

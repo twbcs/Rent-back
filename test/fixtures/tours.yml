@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  picture: MyString
+  sort: 1
+  title: MyString
+  short: MyString
+  description: MyText
+  day: 1
+
+two:
+  picture: MyString
+  sort: 1
+  title: MyString
+  short: MyString
+  description: MyText
+  day: 1
