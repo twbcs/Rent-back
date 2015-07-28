@@ -10,7 +10,7 @@ class Admin::NewsController < Admin::AdminController
   def create
     @new = New.new(new_params)
     if @new.save
-
+      respond_to :js
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::NewsController < Admin::AdminController
   def update
     @new = New.find(params[:id])
     if @new.update(new_params)
-
+      respond_to :js
     else
       render :edit
     end
@@ -32,10 +32,10 @@ class Admin::NewsController < Admin::AdminController
   def destroy
     @new = New.find(params[:id])
     @new.destroy
-
   end
 
   private
+
   def new_params
     params.require(:new).permit(:title, :description, :date)
   end

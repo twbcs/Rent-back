@@ -10,7 +10,7 @@ class Admin::ToursController < Admin::AdminController
   def create
     @tour = Tour.new(tour_params)
     if @tour.save
-
+      respond_to :js
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::ToursController < Admin::AdminController
   def update
     @tour = Tour.find(params[:id])
     if @tour.update(tour_params)
-
+      respond_to :js
     else
       render :edit
     end
@@ -32,10 +32,10 @@ class Admin::ToursController < Admin::AdminController
   def destroy
     @tour = Tour.find(params[:id])
     @tour.destroy
-
   end
 
   private
+
   def tour_params
     params.require(:tour).permit(:picture, :description, :sort, :short, :day, :title)
   end

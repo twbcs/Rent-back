@@ -10,7 +10,7 @@ class Admin::RentsController < Admin::AdminController
   def create
     @rent = Rent.new(rent_params)
     if @rent.save
-
+      respond_to :js
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::RentsController < Admin::AdminController
   def update
     @rent = Rent.find(params[:id])
     if @rent.update(rent_params)
-
+      respond_to :js
     else
       render :edit
     end
@@ -32,10 +32,10 @@ class Admin::RentsController < Admin::AdminController
   def destroy
     @rent = Rent.find(params[:id])
     @rent.destroy
-
   end
 
   private
+
   def rent_params
     params.require(:rent).permit(:picture, :description, :sort, :brand, :color, :model_no, :pay, :period, :cartype, :displacement)
   end

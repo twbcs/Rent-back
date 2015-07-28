@@ -10,7 +10,7 @@ class Admin::AdvertsController < Admin::AdminController
   def create
     @ad = Advert.new(ad_params)
     if @ad.save
-
+      respond_to :js
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::AdvertsController < Admin::AdminController
   def update
     @ad = Advert.find(params[:id])
     if @ad.update(ad_params)
-
+      respond_to :js
     else
       render :edit
     end
@@ -36,6 +36,7 @@ class Admin::AdvertsController < Admin::AdminController
   end
 
   private
+
   def ad_params
     params.require(:advert).permit(:picture, :title, :link, :ad_model)
   end
