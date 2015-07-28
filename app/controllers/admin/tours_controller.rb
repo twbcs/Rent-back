@@ -1,6 +1,7 @@
 class Admin::ToursController < Admin::AdminController
   def index
-    @tours = Tour.all
+    @tours = Tour.where(day: params[:day])
+    @tour = Tour.new
   end
 
   def new
@@ -17,6 +18,7 @@ class Admin::ToursController < Admin::AdminController
   end
 
   def edit
+    @tours = Tour.where(day: params[:day])
     @tour = Tour.find(params[:id])
   end
 

@@ -1,6 +1,7 @@
 class Admin::NewsController < Admin::AdminController
   def index
     @news = New.all
+    @new = New.new
   end
 
   def new
@@ -18,6 +19,7 @@ class Admin::NewsController < Admin::AdminController
 
   def edit
     @new = New.find(params[:id])
+    @news = New.all
   end
 
   def update

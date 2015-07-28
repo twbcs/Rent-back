@@ -3,10 +3,10 @@
   <h3>首頁</h3>
   <ul class="toggle">
     <li>
-      <%= link_to "大圖輪播", admin_adverts_path(ad_model: 1) %>
+      <%= link_to "大圖輪播", new_admin_advert_path(ad_model: 1) %>
     </li>
     <li>
-      <%= link_to "頁腳廣告", admin_adverts_path(ad_model: 2) %>
+      <%= link_to "頁腳廣告", new_admin_advert_path(ad_model: 2) %>
     </li>
     <li>
       <%= link_to "最新消息", admin_news_index_path %>
@@ -54,31 +54,31 @@
       <%= link_to "五日行程(以上)", admin_tours_path(day: 5) %>
     </li>
     <li>
-      <%= link_to "主題住宿", admin_articles_path %>
+      <%= link_to "主題住宿", edit_admin_article_path(id: 1) %>
     </li>
   </ul>
   <h3>廣告頁</h3>
   <ul class="toggle">
     <li>
-      <%= link_to "交通資訊", admin_articles_path %>
+      <%= link_to "交通資訊", edit_admin_article_path(id: 2) %>
     </li>
     <li>
-      <%= link_to "租車須知", admin_articles_path %>
+      <%= link_to "租車須知", edit_admin_article_path(id: 3) %>
     </li>
     <li>
-      <%= link_to "旅遊包車", admin_articles_path %>
+      <%= link_to "旅遊包車", edit_admin_article_path(id: 4) %>
     </li>
     <li>
-      <%= link_to "商務洽公", admin_articles_path %>
+      <%= link_to "商務洽公", edit_admin_article_path(id: 5) %>
     </li>
     <li>
-      <%= link_to "結婚禮車", admin_articles_path %>
+      <%= link_to "結婚禮車", edit_admin_article_path(id: 6) %>
     </li>
     <li>
-      <%= link_to "新舊車買賣", admin_articles_path %>
+      <%= link_to "新舊車買賣", edit_admin_article_path(id: 7) %>
     </li>
     <li>
-      <%= link_to "汽車保養", admin_articles_path %>
+      <%= link_to "汽車保養", edit_admin_article_path(id: 8) %>
     </li>
   </ul>
   <footer>

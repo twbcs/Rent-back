@@ -1,15 +1,12 @@
 class Admin::ArticlesController < Admin::AdminController
-  def index
-    @ads = Advert.all
-  end
 
   def new
-    @ad = Advert.new
+    @article = Article.new
   end
 
   def create
-    @ad = Advert.new(ad_params)
-    if @ad.save
+    @article = Article.new(article_params)
+    if @article.save
       respond_to :js
     else
       render :new
@@ -17,26 +14,21 @@ class Admin::ArticlesController < Admin::AdminController
   end
 
   def edit
-    @ad = Advert.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def update
-    @ad = Advert.find(params[:id])
-    if @ad.update(ad_params)
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
       respond_to :js
     else
       render :edit
     end
   end
 
-  def destroy
-    @ad = Advert.find(params[:id])
-    @ad.destroy
-  end
-
   private
 
-  def ad_params
-    params.require(:advert).permit(:picture, :title, :link, :ad_model)
+  def article_params
+    params.require(:article).permit(:picture, :title, :link, :ad_model)
   end
 end

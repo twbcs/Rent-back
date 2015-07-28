@@ -1,0 +1,9 @@
+<%= form_for @page do |form| -%>
+
+  <%= form.cktext_area :notes, class: 'someclass', ckeditor: {language: 'zh_TW'} %>
+
+  <%= form.cktext_area :content, value: 'Default value', id:  'sometext' %>
+
+  <%= cktext_area :page, :info, cols: 40, ckeditor: {uiColor: '#AADC6E', toolbar: 'mini'} %>
+
+<% end -%>

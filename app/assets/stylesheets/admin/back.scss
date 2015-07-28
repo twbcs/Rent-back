@@ -526,27 +526,7 @@ html ul.tabs li:last-child {
   -webkit-box-shadow: 0 1px 0 #fff;
   -moz-box-shadow: 0 1px 0 #fff;
 }
-input[type=submit] {
-  border: 1px solid #a9aaa9;
-  border-image: none;
-  color: #666666;
-  text-shadow: 0px 1px 0px #fff;
-  @extend .extent4;
 
-  &:hover {
-    color: #333333;
-  }
-  &.alt_btn {
-    color: #003e49;
-    text-shadow: 0px 1px 0px #6cdcf9;
-    @extend .extent4;
-
-    &:hover {
-      color: #001217;
-      background-color: #FC0;
-    }
-  }
-}
 @mixin extent9($width) {
   width: $width;
   margin-right: 10px;
@@ -589,24 +569,45 @@ input[type=submit] {
 .width220 {
   width: 220px;
 }
-input[type=submit].alt_btn2 {
-  background: #cfd0d4;
-  padding: 0px 10px;
-  border-radius: 5px;
-  height: 22px;
-  color: #003e49;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0px 1px 0px #fff;
-  text-shadow: 0px 1px 0px #6cdcf9;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-box-shadow: 0 1px 0 #fff;
-  -moz-box-shadow: 0 1px 0 #fff;
-  margin-left: 10px;
+input[type=submit], button[type=button], input[type=reset] {
+  border: 1px solid #a9aaa9;
+  border-image: none;
+  color: #666666;
+  text-shadow: 0px 1px 0px #fff;
+  @extend .extent4;
+
   &:hover {
-    color: #001217;
-    background-color: #FC0;
+    color: #333333;
+  }
+  &.alt_btn {
+    color: #003e49;
+    text-shadow: 0px 1px 0px #6cdcf9;
+    @extend .extent4;
+
+    &:hover {
+      color: #001217;
+      background-color: #FC0;
+    }
+  }
+  &.alt_btn2 {
+    background: #cfd0d4;
+    padding: 0px 10px;
+    border-radius: 5px;
+    height: 22px;
+    color: #003e49;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 1px 0px #fff;
+    text-shadow: 0px 1px 0px #6cdcf9;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    margin-left: 10px;
+    &:hover {
+      color: #001217;
+      background-color: #FC0;
+    }
   }
 }
 input[type=submit].btn_post_message {
@@ -819,4 +820,8 @@ fieldset textarea:focus {
     width: 80px;
     height: 45px;
   }
+}
+#advert_picture {
+    visibility: hidden;    /* 隐藏 */
+    height: 1px;
 }

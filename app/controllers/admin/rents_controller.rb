@@ -1,6 +1,7 @@
 class Admin::RentsController < Admin::AdminController
   def index
-    @rents = Rent.all
+    @rents = Rent.where(period: params[:period], cartype: params[:cartype])
+    @rent = Rent.new
   end
 
   def new
@@ -17,6 +18,7 @@ class Admin::RentsController < Admin::AdminController
   end
 
   def edit
+    @rents = Rent.where(period: params[:period], cartype: params[:cartype])
     @rent = Rent.find(params[:id])
   end
 
