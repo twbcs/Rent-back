@@ -16,7 +16,7 @@
 //= require jquery.tablesorter
 //= require ckeditor/init
 //= require hideshow
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 
 $(function(){

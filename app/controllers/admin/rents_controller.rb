@@ -1,4 +1,4 @@
-class RentsController < ApplicationController
+class Admin::RentsController < Admin::AdminController
   def index
     @rents = Rent.all
   end

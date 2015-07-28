@@ -3,82 +3,82 @@
   <h3>首頁</h3>
   <ul class="toggle">
     <li>
-      <a href="banner.htm">大圖輪播</a>
+      <%= link_to "大圖輪播", admin_adverts_path(ad_model: 1) %>
     </li>
     <li>
-      <a href="Ad.htm">頁腳廣告</a>
+      <%= link_to "頁腳廣告", admin_adverts_path(ad_model: 2) %>
     </li>
     <li>
-      <a href="News.htm">最新消息</a>
+      <%= link_to "最新消息", admin_news_index_path %>
     </li>
   </ul>
   <h3>長租車</h3>
   <ul class="toggle">
     <li>
-      <a href="CarA01.htm">轎車</a>
+      <%= link_to "轎車", admin_rents_path(period: 1, cartype: 1) %>
     </li>
     <li>
-      <a href="CarA02.htm">貨車</a>
+      <%= link_to "貨車", admin_rents_path(period: 1, cartype: 2) %>
     </li>
     <li>
-      <a href="CarA03.htm">休旅車</a>
+      <%= link_to "休旅車", admin_rents_path(period: 1, cartype: 3) %>
     </li>
   </ul>
   <h3>短租車</h3>
   <ul class="toggle">
     <li>
-      <a href="CarB01.htm">轎車</a>
+      <%= link_to "轎車", admin_rents_path(period: 2, cartype: 1) %>
     </li>
     <li>
-      <a href="CarB02.htm">貨車</a>
+      <%= link_to "貨車", admin_rents_path(period: 2, cartype: 2) %>
     </li>
     <li>
-      <a href="CarB03.htm">休旅車</a>
+      <%= link_to "休旅車", admin_rents_path(period: 2, cartype: 3) %>
     </li>
   </ul>
   <h3>行程規劃</h3>
   <ul class="toggle">
     <li>
-      <a href="tour01.htm">一日行程</a>
+      <%= link_to "一日行程", admin_tours_path(day: 1) %>
     </li>
     <li>
-      <a href="tour02.htm">二日行程</a>
+      <%= link_to "二日行程", admin_tours_path(day: 2) %>
     </li>
     <li>
-      <a href="tour03.htm">三日行程</a>
+      <%= link_to "三日行程", admin_tours_path(day: 3) %>
     </li>
     <li>
-      <a href="tour04.htm">四日行程</a>
+      <%= link_to "四日行程", admin_tours_path(day: 4) %>
     </li>
     <li>
-      <a href="tour05.htm">五日行程(以上)</a>
+      <%= link_to "五日行程(以上)", admin_tours_path(day: 5) %>
     </li>
     <li>
-      <a href="tour06.htm">主題住宿</a>
+      <%= link_to "主題住宿", admin_articles_path %>
     </li>
   </ul>
   <h3>廣告頁</h3>
   <ul class="toggle">
     <li>
-      <a href="Info.htm">交通資訊</a>
+      <%= link_to "交通資訊", admin_articles_path %>
     </li>
     <li>
-      <a href="Rent.htm">租車須知</a>
+      <%= link_to "租車須知", admin_articles_path %>
     </li>
     <li>
-      <a href="Chartered.htm">旅遊包車</a>
+      <%= link_to "旅遊包車", admin_articles_path %>
     </li>
     <li>
-      <a href="Business.htm">商務洽公</a>
+      <%= link_to "商務洽公", admin_articles_path %>
     </li>
     <li>
-      <a href="Wedding.htm">結婚禮車</a>
+      <%= link_to "結婚禮車", admin_articles_path %>
     </li>
     <li>
-      <a href="Sale.htm">新舊車買賣</a>
+      <%= link_to "新舊車買賣", admin_articles_path %>
     </li>
     <li>
-      <a href="Care.htm">汽車保養</a>
+      <%= link_to "汽車保養", admin_articles_path %>
     </li>
   </ul>
   <footer>

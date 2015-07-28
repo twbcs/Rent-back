@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :responses, :tours, :articles, :rents, :news, :adverts
 
+  namespace :admin do  # , :path => "sekret" change path
+    resources :responses, :tours, :articles, :rents, :news, :adverts
+  end
+
   mount Ckeditor::Engine => '/ckeditor'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

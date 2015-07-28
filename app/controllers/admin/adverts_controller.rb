@@ -1,4 +1,4 @@
-class AdvertsController < ApplicationController
+class Admin::AdvertsController < Admin::AdminController
   def index
     @ads = Advert.all
   end

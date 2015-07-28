@@ -1,4 +1,4 @@
-class ResponsesController < ApplicationController
+class Admin::ResponsesController < Admin::AdminController
   def index
     @responses = Response.all
   end

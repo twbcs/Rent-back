@@ -14,13 +14,13 @@ html {
 body {
   @extend .extend5;
   background-color: #E5E8F1;
-  background-image: url(../img/bg.jpg);
+  background-image: url(../bg.jpg);
   background-repeat: repeat;
 }
 .login input {
   height: 320px;
   width: 95px;
-  background-image: url(../img/login.png);
+  background-image: url(../login.png);
   background-repeat: no-repeat;
   border-top-style: none;
   border-right-style: none;
@@ -29,7 +29,7 @@ body {
 }
 .index {
   height: 600px;
-  background-image: url(../img/bg2.jpg);
+  background-image: url(../bg2.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   position: relative;
@@ -85,7 +85,7 @@ header#header {
   height: 55px;
   margin: auto;
   background-color: #ffcc00;
-  background-image: url(../img/bg3.jpg);
+  background-image: url(../bg3.jpg);
   background-repeat: repeat-x;
 }
 .extent6 {

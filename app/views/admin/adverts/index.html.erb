@@ -1,0 +1,79 @@
+<%= link_to "新增", new_admin_advert_path, class: "btn btn-primary" %>
+
+<section class="column" id="main" style="height: 1104px;">
+  <div class="breadcrumbs_container">
+    <a name="new"></a>
+    <article class="breadcrumbs"><a class="current">
+&gt;&gt;新增內容</a>
+      <div class="breadcrumb_divider"></div>
+      <a href="#list">&gt;&gt;內容列表</a>
+    </article>
+    <div class="clear"></div>
+  </div>
+  <article class="module width_full">
+    <header>
+      <h3>頁腳廣告&nbsp;( 圖片上傳尺寸為 150*60像素 )</h3>
+    </header>
+    <div class="module_content">
+      <fieldset class="thum">
+        <img src="img/thum.jpg">
+      </fieldset>
+
+      <fieldset class="w70">
+
+        <label>瀏覽檔案</label>
+        <input class="alt_btn2" type="submit" value="選擇">
+      </fieldset>
+      <fieldset class="w275">
+
+        <label>標題</label>
+        <input style="width: 250px;" type="text">
+      </fieldset>
+      <fieldset class="w275">
+
+        <label>連結</label>
+        <input style="width: 250px;" type="text">
+      </fieldset>
+      <div class="clear"></div>
+
+    </div>
+    <footer>
+      <div class="submit_link">
+        <input class="alt_btn" type="submit" value="新增">
+        <input class="alt_btn" type="submit" value="修改">
+        <input name="送出" type="submit" value="取消">
+      </div>
+    </footer>
+  </article>
+
+<a name="list"></a>
+<article class="breadcrumbs ">
+  <a href="#new">&gt;&gt;新增內容</a>
+  <div class="breadcrumb_divider"></div>
+  <a class="current">&gt;&gt;內容列表</a>
+</article>
+<div class="clear"></div>
+
+<% @ads.each do |ad| %>
+<article class="module width_full">
+  <div class="module_content">
+    <fieldset class="thum">
+      <%= image_tag(ad.picture) %>
+    </fieldset>
+    <fieldset class="w275">
+      <label>標題</label>
+      <div class="textNone"><%= ad.title %></div>
+    </fieldset>
+    <fieldset class="w275">
+      <label>連結</label>
+      <div class="textNone"><%= ad.link %></div>
+    </fieldset>
+    <fieldset class="w70">
+      <label>功能</label>
+      <%= link_to(image_tag("images/icn_edit.png"), edit_admin_advert_path(ad), title: "Edit", class: "Edit") %>
+      <%= link_to(image_tag("images/icn_trash.png"), admin_advert_path(ad), method: :delete, title: "Trash", class: "Trash") %>
+    </fieldset>
+    <div class="clear"></div>
+  </div>
+</article>
+<% end %>
