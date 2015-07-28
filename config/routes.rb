@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :responses, :tours, :articles, :rents, :news, :adverts
-
+  resources :tours, :articles, :rents, :news, :adverts, only: [:index, :show]
+  resources :responses, only: [:new, :create]
   namespace :admin do  # , :path => "sekret" change path
-    resources :responses, :tours, :articles, :rents, :news, :adverts
+    resources :tours, :rents, :news, :adverts, except: [:show]
+    resources :articles, only: [:edit, :update]
+    resources :responses, except: [:new, :create]
   end
 
   mount Ckeditor::Engine => '/ckeditor'

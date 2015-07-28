@@ -29,10 +29,6 @@ class Admin::RentsController < Admin::AdminController
     end
   end
 
-  def show
-    @rent = Rent.find(params[:id])
-  end
-
   def destroy
     @rent = Rent.find(params[:id])
     @rent.destroy

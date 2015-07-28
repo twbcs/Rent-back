@@ -29,10 +29,6 @@ class Admin::AdvertsController < Admin::AdminController
     end
   end
 
-  def show
-    @ad = Advert.find(params[:id])
-  end
-
   def destroy
     @ad = Advert.find(params[:id])
     @ad.destroy

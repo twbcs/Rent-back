@@ -29,10 +29,6 @@ class Admin::NewsController < Admin::AdminController
     end
   end
 
-  def show
-    @new = New.find(params[:id])
-  end
-
   def destroy
     @new = New.find(params[:id])
     @new.destroy
