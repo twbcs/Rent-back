@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'articles#index'
+  devise_for :admins
   resources :tours, :articles, :rents, :messages, :adverts, only: [:index, :show]
   resources :responses, only: [:new, :create]
   namespace :admin do  # , :path => "sekret" change path

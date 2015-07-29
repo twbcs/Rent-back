@@ -1,0 +1,15 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<div class="all index ">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <section class="column">
+    <div class="admin">
+      <%= f.email_field :email, autofocus: true, class: "inputIndex" %>
+      <%= f.password_field :password, autocomplete: "off", class: "inputIndex2" %>
+    </div>
+    <div class="login">
+      <%= f.submit "Submit", type: :image, src: image_path("login.png") %></p>
+    </div>
+  </section>
+  <% end %>
+</div>
