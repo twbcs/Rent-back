@@ -1,11 +1,8 @@
 class Admin::RentsController < Admin::AdminController
-  def index
-    @rents = Rent.where(period: params[:period], cartype: params[:cartype])
-    @rent = Rent.new
-  end
+  before_action :page, only: [:new, :edit]
 
   def new
-    @rent = Rent.new
+    @rent = Rent.new(period: params[:period], cartype: params[:cartype])
   end
 
   def create
@@ -18,7 +15,6 @@ class Admin::RentsController < Admin::AdminController
   end
 
   def edit
-    @rents = Rent.where(period: params[:period], cartype: params[:cartype])
     @rent = Rent.find(params[:id])
   end
 
@@ -40,5 +36,14 @@ class Admin::RentsController < Admin::AdminController
 
   def rent_params
     params.require(:rent).permit(:picture, :description, :sort, :brand, :color, :model_no, :pay, :period, :cartype, :displacement)
+  end
+
+  def page
+    params[:page] ? page = params[:page].to_i : page = 1
+    page == 1 ? offset = 0 : offset = (page - 1) * 5
+    temp = Rent.where(cartype: params[:cartype], period: params[:period]).size
+    (temp % 5) > 0 ? temp2 = 1 : temp2 = 0
+    @pages = temp / 5 + temp2
+    @rents = Rent.where(cartype: params[:cartype], period: params[:period]).offset(offset).limit(5)
   end
 end

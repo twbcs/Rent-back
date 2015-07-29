@@ -1,19 +1,9 @@
 class Admin::AdvertsController < Admin::AdminController
   skip_before_action :verify_authenticity_token
-
-  def index
-    @ad = Advert.new(ad_model: params[:ad_model])
-    @ads = Advert.where(ad_model: params[:ad_model])
-  end
+  before_action :page, only: [:new, :edit]
 
   def new
-    params[:page] ? page = params[:page].to_i : page = 1
-    page == 1 ? @offset = 0 : @offset = ( page - 1 ) * 5
     @ad = Advert.new(ad_model: params[:ad_model])
-    ads_temp = Advert.where(ad_model: params[:ad_model]).size
-    (ads_temp % 5) > 0 ? ads_temp2 = 1 : ads_temp2 = 0
-    @ads_page = ads_temp / 5 + ads_temp2
-    @ads = Advert.where(ad_model: params[:ad_model]).offset(@offset).limit(5)
   end
 
   def create
@@ -27,7 +17,6 @@ class Admin::AdvertsController < Admin::AdminController
 
   def edit
     @ad = Advert.find(params[:id])
-    @ads = Advert.where(ad_model: @ad.ad_model)
   end
 
   def update
@@ -49,5 +38,14 @@ class Admin::AdvertsController < Admin::AdminController
 
   def ad_params
     params.require(:advert).permit(:picture, :title, :link, :ad_model)
+  end
+
+  def page
+    params[:page] ? page = params[:page].to_i : page = 1
+    page == 1 ? offset = 0 : offset = (page - 1) * 5
+    temp = Advert.where(ad_model: params[:ad_model]).size
+    (temp % 5) > 0 ? temp2 = 1 : temp2 = 0
+    @pages = temp / 5 + temp2
+    @ads = Advert.where(ad_model: params[:ad_model]).offset(offset).limit(5)
   end
 end

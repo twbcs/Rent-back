@@ -1,0 +1,18 @@
+<div class="module_content">
+  <fieldset class="w780">
+    <form name="form" id="form">
+      &nbsp;&nbsp; *請選擇頁碼* &nbsp;&nbsp;&nbsp; 你現在所在位置
+      <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)" style="width:90px;">
+        <% (1..pages).each do |i| %>
+          <option <%= "selected" if i == params[:page].to_i %> ><%= i %></option>
+        <% end %>
+      </select>
+    </form>
+  </fieldset>
+</div>
+<script type="text/javascript">
+  function MM_jumpMenu(targ, selObj, restore) { //v3.0
+    eval(targ + ".location='?day=<%= day%>&page=" + selObj.options[selObj.selectedIndex].value + "'");
+    if (restore) selObj.selectedIndex = 0;
+  }
+</script>

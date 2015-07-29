@@ -1,2 +1,94 @@
-<h1>Rents#edit</h1>
-<p>Find me in app/views/rents/edit.html.erb</p>
+<section class="column" id="main" style="height: 1104px;">
+  <div class="breadcrumbs_container">
+    <a name="new"></a>
+
+    <article class="breadcrumbs">
+      <a class="current">&gt;&gt;新增內容</a>
+      <div class="breadcrumb_divider"></div>
+      <a href="#list">&gt;&gt;內容列表</a>
+    </article>
+
+    <div class="clear"></div>
+  </div>
+  <%= form_for [:admin,@rent] do |f| %>
+  <article class="module width_full">
+    <header>
+      <h3>
+        <% if @rent.ad_model == 1 %>
+        大圖輪播&nbsp;( 圖片上傳尺寸為 600*375像素 )
+        <% else %>
+        頁腳廣告&nbsp;( 圖片上傳尺寸為 150*60像素 )
+        <% end %>
+      </h3>
+    </header>
+    <div class="module_content">
+      <%#= render "shared/errors", object: @ad %>
+      <fieldset class="thum">
+        <%= image_tag(@rent.picture, id: "blah")  %>
+      </fieldset>
+
+      <fieldset class="w70">
+        <label>瀏覽檔案</label>
+        <button class="alt_btn2" id="myBtn" name="button" type="button">選擇</button>
+      </fieldset>
+
+      <fieldset class="w275">
+        <label>標題</label>
+        <%= f.text_field :title, style: "width: 240px;" %>
+      </fieldset>
+
+      <fieldset class="w275">
+        <label>連結</label>
+        <%= f.text_field :link, style: "width: 240px;" %>
+      </fieldset>
+      <%= f.hidden_field :cartype %>
+      <%= f.hidden_field :period %>
+      <%= f.file_field :picture, accept: "image/png,image/gif,image/jpeg" %>
+
+      <div class="clear"></div>
+    </div>
+    <footer>
+      <div class="submit_link">
+        <input class="alt_btn" type="submit" value="修改">
+        <input name="送出" type="reset" value="取消">
+      </div>
+    </footer>
+
+  </article>
+  <% end %>
+
+  <a name="list"></a>
+  <article class="breadcrumbs ">
+    <a href="#new">&gt;&gt;新增內容</a>
+    <div class="breadcrumb_divider"></div>
+    <a class="current">&gt;&gt;內容列表</a>
+  </article>
+  <div class="clear"></div>
+
+  <% @rents.each do |rent| %>
+  <article class="module width_full">
+    <div class="module_content">
+      <fieldset class="thum">
+        <%= image_tag rent.picture %>
+      </fieldset>
+      <fieldset class="w275">
+        <label>標題</label>
+        <div class="textNone"><%= rent.title %></div>
+      </fieldset>
+      <fieldset class="w275">
+        <label>連結</label>
+        <div class="textNone"><%= rent.link %></div>
+      </fieldset>
+      <fieldset class="w70">
+        <label>功能</label>
+        <%= link_to(image_tag("icn_edit.png"), edit_admin_rent_path(rent), title: "Edit", class: "Edit") %>
+        <%= link_to(image_tag("icn_trash.png"), admin_rent_path(rent), method: :delete, title: "Trash", class: "Trash") %>
+      </fieldset>
+      <div class="clear"></div>
+    </div>
+  </article>
+  <% end %>
+  <%= render '_page.html.erb', cartype: @rent.cartype, period: @rent.period, pages: @pages  %>
+  <div class="clear"></div>
+  <div class="spacer"></div>
+</section>

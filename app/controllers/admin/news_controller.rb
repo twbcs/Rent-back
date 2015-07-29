@@ -1,8 +1,5 @@
 class Admin::NewsController < Admin::AdminController
-  def index
-    @news = New.all
-    @new = New.new
-  end
+  before_action :page, only: [:new, :edit]
 
   def new
     @new = New.new
@@ -19,7 +16,6 @@ class Admin::NewsController < Admin::AdminController
 
   def edit
     @new = New.find(params[:id])
-    @news = New.all
   end
 
   def update
@@ -40,5 +36,14 @@ class Admin::NewsController < Admin::AdminController
 
   def new_params
     params.require(:new).permit(:title, :description, :date)
+  end
+
+  def page
+    params[:page] ? page = params[:page].to_i : page = 1
+    page == 1 ? offset = 0 : offset = (page - 1) * 5
+    temp = New.all.size
+    (temp % 5) > 0 ? temp2 = 1 : temp2 = 0
+    @page = temp / 5 + temp2
+    @news = New.all.offset(offset).limit(5)
   end
 end

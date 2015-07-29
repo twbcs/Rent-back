@@ -3,19 +3,6 @@ class Admin::ResponsesController < Admin::AdminController
     @responses = Response.all
   end
 
-  def new
-    @response = Response.new
-  end
-
-  def create
-    @response = Response.new(response_params)
-    if @response.save
-      respond_to :js
-    else
-      render :new
-    end
-  end
-
   def edit
     @response = Response.find(params[:id])
   end

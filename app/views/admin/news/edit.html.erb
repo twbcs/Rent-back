@@ -1,2 +1,86 @@
-<h1>News#edit</h1>
-<p>Find me in app/views/news/edit.html.erb</p>
+<section class="column" id="main" style="height: 1398px;">
+  <div class="breadcrumbs_container">
+    <a name="new"></a>
+
+    <article class="breadcrumbs">
+      <a class="current">&gt;&gt;新增內容</a>
+      <div class="breadcrumb_divider"></div>
+      <a href="#list">&gt;&gt;內容列表</a>
+    </article>
+
+    <div class="clear"></div>
+  </div>
+
+  <%= form_for [:admin,@ad] do |f| %>
+  <article class="module width_full">
+    <header>
+      <h3>
+        最新消息
+      </h3>
+    </header>
+    <div class="module_content">
+      <%#= render "shared/errors", object: @ad %>
+      <fieldset class="w450">
+        <label>標題</label>
+        <%= f.text_field :title, style: "width: 420px;" %>
+      </fieldset>
+
+      <fieldset class="w275">
+        <label>發布日期</label>
+        <%= f.text_field :date, style: "width: 240px;" %>
+      </fieldset>
+
+      <fieldset class="w740">
+        <label>內文編輯</label>
+        <div>
+          <img src="img/Ckedit.jpg" width="740">
+        </div>
+      </fieldset>
+
+      <div class="clear"></div>
+    </div>
+    <footer>
+      <div class="submit_link">
+        <input class="alt_btn" type="submit" value="修改">
+        <input name="送出" type="reset" value="取消">
+      </div>
+    </footer>
+
+  </article>
+  <% end %>
+
+  <a name="list"></a>
+  <article class="breadcrumbs ">
+    <a href="#new">&gt;&gt;新增內容</a>
+    <div class="breadcrumb_divider"></div>
+    <a class="current">&gt;&gt;內容列表</a>
+  </article>
+  <div class="clear"></div>
+
+  <% @news.each do |news| %>
+  <article class="module width_full">
+    <div class="module_content">
+      <fieldset class="thum">
+        <%= image_tag news.picture %>
+      </fieldset>
+      <fieldset class="w275">
+        <label>標題</label>
+        <div class="textNone"><%= news.title %></div>
+      </fieldset>
+      <fieldset class="w275">
+        <label>發布日期</label>
+        <div class="textNone"><%= news.date %></div>
+      </fieldset>
+      <fieldset class="w70">
+        <label>功能</label>
+        <%= link_to(image_tag("icn_edit.png"), edit_admin_news_path(news), title: "Edit", class: "Edit") %>
+        <%= link_to(image_tag("icn_trash.png"), admin_news_path(news), method: :delete, title: "Trash", class: "Trash") %>
+      </fieldset>
+      <div class="clear"></div>
+    </div>
+  </article>
+  <% end %>
+  <%= render '_page.html.erb', pages: @pages  %>
+  <div class="clear"></div>
+  <div class="spacer"></div>
+  </section>
