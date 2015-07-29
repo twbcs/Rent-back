@@ -821,7 +821,10 @@ fieldset textarea:focus {
     height: 45px;
   }
 }
-#advert_picture {
+#advert_picture, #rent_picture, #tour_picture {
     visibility: hidden;    /* 隐藏 */
-    height: 1px;
+    display: none;
+}
+.ckeditor_m {
+  margin-top: 22px;
 }

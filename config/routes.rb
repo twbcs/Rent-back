@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :tours, :articles, :rents, :news, :adverts, only: [:index, :show]
+  resources :tours, :articles, :rents, :messages, :adverts, only: [:index, :show]
   resources :responses, only: [:new, :create]
   namespace :admin do  # , :path => "sekret" change path
-    resources :tours, :rents, :news, :adverts, except: [:index,:show]
+    resources :tours, :rents, :messages, :adverts, except: [:index,:show]
     resources :articles, only: [:edit, :update]
     resources :responses, except: [:new, :create]
   end

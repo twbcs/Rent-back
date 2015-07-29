@@ -2,19 +2,18 @@
   <div class="breadcrumbs_container">
     <div class="clear"></div>
   </div>
+  <%= form_for @article do |f| %>
+    <%#= render "shared/errors", object: @article %>
   <article class="module width_full">
     <header>
-      <h3>新舊車買賣</h3>
+      <h3> <%= article_model(@article.id) %> </h3>
     </header>
 
     <div class="module_content">
-
       <div class="w740">
-        <img src="img/Ckedit.jpg" width="740" height="700">
+        <%= f.cktext_area :description, class: 'someclass', ckeditor: {language: 'zh_TW', height: "500"}, width: "740" %>
       </div>
-
       <div class="clear"></div>
-
     </div>
 
     <footer>
@@ -24,7 +23,7 @@
       </div>
     </footer>
   </article>
-
+  <% end %>
   <div class="clear"></div>
 
   <div class="module_content"></div>
