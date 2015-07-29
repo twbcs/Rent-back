@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :tours, :articles, :rents, :messages, :adverts, only: [:index, :show]
   resources :responses, only: [:new, :create]
   namespace :admin do  # , :path => "sekret" change path
+    resources :intros, only: [:index]
     resources :tours, :rents, :messages, :adverts, except: [:index,:show]
     resources :articles, only: [:edit, :update]
     resources :responses, except: [:new, :create]

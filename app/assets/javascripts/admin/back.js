@@ -28,6 +28,7 @@ $('#myBtn').click(function() {
 $("#tour_picture").change(function(){
   readURL(this);
 });
+
 $(function(){
   var n = $("#tour_short").val().length + 1;
   $('#nowtxt').html('<b>目前:' + n + '字</b>');
