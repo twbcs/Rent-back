@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.equalHeight
 //= require jquery.tablesorter
+//= require jquery.paginate
 //= require ckeditor/init
 //= require hideshow
 // require turbolinks
