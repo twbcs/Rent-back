@@ -3,11 +3,11 @@ class WelcomeController < ApplicationController
 
   def index
     @big_ad = Advert.where(ad_model: 1)
-    @tour1 = Tour.where(day: 1).order(:soft).limit(3)
-    @tour2 = Tour.where(day: 2).order(:soft).limit(3)
-    @tour3 = Tour.where(day: 3).order(:soft).limit(3)
-    @tour4 = Tour.where(day: 4).order(:soft).limit(3)
-    @tour5 = Tour.where(day: 5).order(:soft).limit(3)
+    @tour1 = Tour.where(day: 1).order(:sort).limit(3)
+    @tour2 = Tour.where(day: 2).order(:sort).limit(3)
+    @tour3 = Tour.where(day: 3).order(:sort).limit(3)
+    @tour4 = Tour.where(day: 4).order(:sort).limit(3)
+    @tour5 = Tour.where(day: 5).order(:sort).limit(3)
     @room = Article.find(1)
     @messages = Message.where("date <= ?", DateTime.now ).order(date: :DESC).limit(5)
   end

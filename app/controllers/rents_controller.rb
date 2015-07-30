@@ -1,6 +1,6 @@
 class RentsController < ApplicationController
   def index
-    @rents = Rent.all
+    @rents = Rent.where(period: params[:period], cartype: params[:cartype])
   end
 
   def show

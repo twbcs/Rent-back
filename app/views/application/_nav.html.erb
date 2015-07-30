@@ -1,6 +1,6 @@
 <header>
   <h1>
-    <a href="index.htm">上馬汽車租賃</a>
+    <%= link_to "上馬汽車租賃", root_path %>
   </h1>
   <div class="class1Tim12" id="FrRTim12">
     <span class="class1Tim12" id="FrTim12">
@@ -60,25 +60,25 @@ function googleTranslateElementInit() {
         </ul>
       </li>
       <li>
-        <a href="Business.htm">商務洽公</a>
+        <%= link_to "商務洽公", article_path(id: 5) %>
       </li>
       <li>
-        <a href="Chartered.htm">旅遊包車</a>
+        <%= link_to "旅遊包車", article_path(id: 4) %>
       </li>
       <li>
-        <a href="Wedding.htm">結婚禮車</a>
+        <%= link_to "結婚禮車", article_path(id: 6) %>
       </li>
       <li class="active">
         <a href="javascript:;">長期租車</a>
         <ul>
           <li>
-            <a href="CarA01.htm">轎車</a>
+            <%= link_to "轎車", rents_path(period: 1, cartype: 1) %>
           </li>
           <li>
-            <a href="#">商用車</a>
+            <%= link_to "商用車", rents_path(period: 1, cartype: 2) %>
           </li>
           <li>
-            <a href="#">休旅車</a>
+            <%= link_to "休旅車", rents_path(period: 1, cartype: 3) %>
           </li>
         </ul>
       </li>
@@ -86,42 +86,42 @@ function googleTranslateElementInit() {
         <a href="javascript:;">短期租車</a>
         <ul>
           <li>
-            <a href="CarB01.htm">轎車</a>
+            <%= link_to "轎車", rents_path(period: 2, cartype: 1) %>
           </li>
           <li>
-            <a href="#">商用車</a>
+            <%= link_to "商用車", rents_path(period: 2, cartype: 2) %>
           </li>
           <li>
-            <a href="#">休旅車</a>
+            <%= link_to "休旅車", rents_path(period: 2, cartype: 3) %>
           </li>
         </ul>
       </li>
       <li>
-        <a href="Sale.htm">新舊車買賣</a>
+        <%= link_to "新舊車買賣", article_path(id: 7) %>
       </li>
       <li>
-        <a href="Care.htm">汽車保養</a>
+        <%= link_to "汽車保養", article_path(id: 8) %>
       </li>
       <li class="active">
         <a href="javascript:;">上馬旅遊趣</a>
         <ul>
           <li>
-            <a href="tour01.htm">1日自由行</a>
+            <%= link_to "1日自由行", tours_path(day: 1)%>
           </li>
           <li>
-            <a href="tour02.htm">2日自由行</a>
+            <%= link_to "2日自由行", tours_path(day: 2)%>
           </li>
           <li>
-            <a href="tour03.htm">3日自由行</a>
+            <%= link_to "3日自由行", tours_path(day: 3)%>
           </li>
           <li>
-            <a href="tour04.htm">4日自由行</a>
+            <%= link_to "4日自由行", tours_path(day: 4)%>
           </li>
           <li>
-            <a href="tour05.htm">5日自由行</a>
+            <%= link_to "5日自由行", tours_path(day: 5)%>
           </li>
           <li>
-            <a href="tour06.htm">主題住宿</a>
+            <%= link_to "主題住宿", article_path(id: 1) %>
           </li>
         </ul>
       </li>

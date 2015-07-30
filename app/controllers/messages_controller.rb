@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :min_ad
 
   def index
-    @messages = Message.all.order(date: DESC)
+    @messages = Message.all.order(date: :DESC)
   end
 
   def show

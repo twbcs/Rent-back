@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   def index
-    @tours = Tour.all
+    @tours = Tour.where(day: params[:day])
   end
 
   def show
