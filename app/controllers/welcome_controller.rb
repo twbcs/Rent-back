@@ -8,8 +8,8 @@ class WelcomeController < ApplicationController
     @tour3 = Tour.where(day: 3).order(:soft).limit(3)
     @tour4 = Tour.where(day: 4).order(:soft).limit(3)
     @tour5 = Tour.where(day: 5).order(:soft).limit(3)
-    @room = Article.find(id: 1)
-    @messages = Message.where("date <= ?", DateTime.now )order(date: DESC).limit(5)
+    @room = Article.find(1)
+    @messages = Message.where("date <= ?", DateTime.now ).order(date: :DESC).limit(5)
   end
 
   def contact

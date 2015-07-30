@@ -8,7 +8,7 @@ class Admin::RentsController < Admin::AdminController
   def create
     @rent = Rent.new(rent_params)
     if @rent.save
-      respond_to :js
+      redirect_to new_admin_rent_path(period: @rent.period, cartype: @rent.cartype)
     else
       render :new
     end
@@ -21,7 +21,7 @@ class Admin::RentsController < Admin::AdminController
   def update
     @rent = Rent.find(params[:id])
     if @rent.update(rent_params)
-      respond_to :js
+      redirect_to new_admin_rent_path(period: @rent.period, cartype: @rent.cartype)
     else
       render :edit
     end

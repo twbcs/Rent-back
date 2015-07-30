@@ -78,15 +78,15 @@
   <article class="module width_full">
     <div class="module_content">
       <fieldset class="thum">
-        <%= image_tag tours.picture %>
+        <%= image_tag(tour.picture) %>
       </fieldset>
       <fieldset class="w275">
         <label>標題</label>
-        <div class="textNone"><%= tours.title %></div>
+        <div class="textNone"><%= tour.title %></div>
       </fieldset>
       <fieldset class="w275">
-        <label>連結</label>
-        <div class="textNone"><%= tours.link %></div>
+        <label>排序</label>
+        <div class="textNone"><%= tour.sort %></div>
       </fieldset>
       <fieldset class="w70">
         <label>功能</label>

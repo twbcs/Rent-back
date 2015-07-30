@@ -7,7 +7,7 @@ class Admin::ArticlesController < Admin::AdminController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      respond_to :js
+      redirect_to edit_admin_article_path(@article)
     else
       render :edit
     end
@@ -16,6 +16,6 @@ class Admin::ArticlesController < Admin::AdminController
   private
 
   def article_params
-    params.require(:article).permit(:picture, :title, :link, :ad_model)
+    params.require(:article).permit(:description)
   end
 end

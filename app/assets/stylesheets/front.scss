@@ -1,5 +1,17 @@
 /* CSS Document */
-html, div, map, isindex, form, header, aside, section, article, footer, dd, dl, dt {
+html,
+div,
+map,
+isindex,
+form,
+header,
+aside,
+section,
+article,
+footer,
+dd,
+dl,
+dt {
   display: block;
 }
 html {
@@ -17,7 +29,8 @@ html {
   left: 645px;
   color: #09c;
 }
-#FrTim12, #MaTim12 {
+#FrTim12,
+#MaTim12 {
   left: 0;
   top: 0;
 }
@@ -206,7 +219,7 @@ footer {
   border: 1px solid #fff;
   padding: 3px;
 }
-@mixin inspic($pic,$top) {
+@mixin inspic($pic, $top) {
   width: 12px;
   height: 34px;
   position: relative;
@@ -298,7 +311,7 @@ footer {
 .Carfloat3 {
   @include xpsition(375px,30px);
 }
-@mixin xfont($width, $height){
+@mixin xfont($width, $height) {
   width: 675px;
   overflow: hidden;
   h3 {
@@ -365,7 +378,7 @@ footer {
     top: 0;
     height: 375px;
     overflow: hidden;
-    ertical-align: top;
+    vertical-align: top;
     position: relative;
     max-height: 375px;
     max-width: 600px;
@@ -459,7 +472,7 @@ footer {
   position: static;
 }
 #wowslider-container1 .ws_photoItem {
-  border: 2em solid #ffffff;
+  border: 2em solid #fff;
   border-image: none;
   margin-top: -2em;
   margin-left: -2em;
@@ -471,17 +484,18 @@ footer {
   display: none !important;
 }
 #wowslider-container1 .ws_bullets a.ws_selbull {
-  background: #ffffff;
+  background: #fff;
   padding: 6px;
   box-shadow: none;
   -webkit-box-shadow: none;
 }
-#wowslider-container1 a.ws_next, #wowslider-container1 a.ws_prev {
+#wowslider-container1 a.ws_next,
+#wowslider-container1 a.ws_prev {
   font: 3.2em/normal "ws-ctrl-bootstrap";
   top: 0;
   width: 15%;
   height: 100%;
-  color: #ffffff;
+  color: #fff;
   overflow: hidden;
   position: absolute;
   z-index: 60;
@@ -499,12 +513,13 @@ footer {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
 }
-#wowslider-container1 a.ws_next::after, #wowslider-container1 a.ws_prev::after  {
+#wowslider-container1 a.ws_next::after,
+#wowslider-container1 a.ws_prev::after {
   left: 0;
   top: 50%;
   text-align: center;
   right: 0;
-  color: #ffffff;
+  color: #fff;
   margin-top: -20px;
   vertical-align: middle;
   display: block;
@@ -523,7 +538,7 @@ footer {
   height: 0;
   bottom: -10px;
   margin-left: -7px;
-  border-top-color: #ffffff;
+  border-top-color: #fff;
   border-right-color: transparent;
   border-left-color: transparent;
   border-top-width: 7px;
@@ -542,7 +557,7 @@ footer {
   -webkit-animation: wsBasic 12s infinite;
 }
 #wowslider-container1 .ws_bullets a img {
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   border-image: none;
   left: -46px;
   bottom: 15px;
@@ -560,7 +575,7 @@ footer {
   width: 80px;
   overflow: hidden;
   position: relative;
-  background-color: #ffffff;
+  background-color: #fff;
   div {
     height: 48px;
     overflow: visible;
@@ -572,7 +587,7 @@ footer {
   height: 50px;
 }
 #wowslider-container1 .ws_bullets .ws_bulframe {
-  border: 3px solid #ffffff;
+  border: 3px solid #fff;
   border-image: none;
   bottom: 19px;
   overflow: visible;
@@ -593,37 +608,85 @@ footer {
   background-image: image-url("fourAD.jpg");
   background-repeat: no-repeat;
 }
-@mixin part($url,$margin) {
+.airport {
   margin: 0 8px 7px 0;
   width: 190px;
   height: 184px;
   float: left;
-  a {
-    overflow: hidden;
-    width: 190px;
-    height: 184px;
-    display: block;
-    line-height: 1000px;
-    &:hover {
-      width: 190px;
-      height: 184px;
-      background-image: image-url($url);
-      background-repeat: no-repeat;
-      background-position: left top;
-    }
-  }
 }
-.airport {
-  @include part("air.png", 0 8px 7px 0);
+.airport a {
+  overflow: hidden;
+  width: 190px;
+  height: 184px;
+  display: block;
+  line-height: 1000px;
+}
+.airport a:hover {
+  width: 190px;
+  height: 184px;
+  background-image: image-url("air.png");
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 .business {
-  @include part("business.png", 0 0 7px);
+  margin: 0 0 7px;
+  width: 190px;
+  height: 184px;
+  float: left;
+}
+.business a {
+  overflow: hidden;
+  width: 190px;
+  height: 184px;
+  display: block;
+  line-height: 1000px;
+}
+.business a:hover {
+  width: 190px;
+  height: 184px;
+  background-image: image-url("business.png");
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 .chartered {
-  @include part("tour.png", 0 8px 0 0);
+  margin: 0 8px 0 0;
+  width: 190px;
+  height: 184px;
+  float: left;
+}
+.chartered a {
+  overflow: hidden;
+  width: 190px;
+  height: 184px;
+  display: block;
+  line-height: 1000px;
+}
+.chartered a:hover {
+  width: 190px;
+  height: 184px;
+  background-image: image-url("tour.png");
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 .wedding {
-  @include part("wedding.png", 0);
+  margin: 0;
+  width: 190px;
+  height: 184px;
+  float: left;
+}
+.wedding a {
+  overflow: hidden;
+  width: 190px;
+  height: 184px;
+  display: block;
+  line-height: 1000px;
+}
+.wedding a:hover {
+  width: 190px;
+  height: 184px;
+  background-image: image-url("wedding.png");
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 
 /*表單*/
@@ -729,7 +792,6 @@ menu {
     }
   }
 }
-
 .bannerCS {
   height: 110px;
   margin-bottom: 15px;
@@ -863,11 +925,11 @@ menu {
     display: block;
     overflow: hidden;
     a {
-     width: 70px;
-     height: 82px;
-     display: block;
-     line-height: 1000px;
-   }
+      width: 70px;
+      height: 82px;
+      display: block;
+      line-height: 1000px;
+    }
   }
 }
 
@@ -1032,7 +1094,7 @@ nav {
     line-height: 20px;
   }
 }
-@mixin cpfont($size,$height,$color,$bcolor) {
+@mixin cpfont($size, $height, $color, $bcolor) {
   font-size: $size;
   line-height: $height;
   color: $color;

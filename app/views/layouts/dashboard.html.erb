@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>後臺管理系統</title>
+  <%= stylesheet_link_tag    'admin/back.css', media: 'all', 'data-turbolinks-track' => true %>
+</head>
+<body>
+  <div class="all">
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified JavaScript -->
+</body>
+</html>

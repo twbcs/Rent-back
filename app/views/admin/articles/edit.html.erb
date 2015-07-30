@@ -2,7 +2,7 @@
   <div class="breadcrumbs_container">
     <div class="clear"></div>
   </div>
-  <%= form_for @article do |f| %>
+  <%= form_for [:admin, @article] do |f| %>
     <%#= render "shared/errors", object: @article %>
   <article class="module width_full">
     <header>
@@ -11,7 +11,7 @@
 
     <div class="module_content">
       <div class="w740">
-        <%= f.cktext_area :description, class: 'someclass', ckeditor: {language: 'zh_TW', height: "500"}, width: "740" %>
+        <%= f.cktext_area :description, ckeditor: {language: 'zh_TW', height: "500"}, width: "740" %>
       </div>
       <div class="clear"></div>
     </div>

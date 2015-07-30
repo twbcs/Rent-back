@@ -16,6 +16,8 @@
 //= require jquery.tablesorter
 //= require jquery.paginate
 //= require ckeditor/init
+//= require wowslider
+//= require script
 //= require hideshow
 // require turbolinks
 //= require_tree .

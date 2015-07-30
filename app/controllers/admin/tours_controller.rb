@@ -8,7 +8,7 @@ class Admin::ToursController < Admin::AdminController
   def create
     @tour = Tour.new(tour_params)
     if @tour.save
-      respond_to :js
+      redirect_to new_admin_tour_path(day: @tour.day)
     else
       render :new
     end
@@ -21,7 +21,7 @@ class Admin::ToursController < Admin::AdminController
   def update
     @tour = Tour.find(params[:id])
     if @tour.update(tour_params)
-      respond_to :js
+      redirect_to new_admin_tour_path(day: @tour.day)
     else
       render :edit
     end
