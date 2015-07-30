@@ -28,7 +28,7 @@ header {
   display: block;
   height: 140px;
   width: 1000px;
-  background-image: url("../img/logo.png");
+  background-image: image-url("logo.png");
   background-repeat: no-repeat;
   background-position: left center;
   position: relative;
@@ -91,7 +91,7 @@ dt {
 
 /* 共用項目 */
 body {
-  background-image: url("../img/bg.gif");
+  background-image: image-url("bg.gif");
   background-repeat: no-repeat;
   background-position: center top;
 }
@@ -145,7 +145,7 @@ hr {
   /* IE6 */
 }
 .facebook {
-  background-image: url("../img/facebook.gif");
+  background-image: image-url("facebook.gif");
   display: block;
   overflow: hidden;
   height: 138px;
@@ -188,7 +188,7 @@ footer {
   letter-spacing: 1px;
 }
 .footer-bg {
-  background-image: url("../img/footer.png");
+  background-image: image-url("footer.png");
   background-repeat: no-repeat;
   background-position: right center;
 }
@@ -214,20 +214,20 @@ footer {
   top: $top;
 }
 .InsLeft {
-  @include inspic(url("../img/feature_left.png") center top, 52px);
+  @include inspic(image-url("feature_left.png") center top, 52px);
   display: block;
   margin: -28px 5px 0 10px;
   &:hover {
-    @include inspic(url("../img/feature_left.png") center bottom, 52px);
+    @include inspic(image-url("feature_left.png") center bottom, 52px);
   }
 }
 .InsRight {
-  @include inspic(url("../img/feature_right.png") center top, -143px);
+  @include inspic(image-url("feature_right.png") center top, -143px);
   display: block;
   margin: 70px 10px 0 5px;
   left: 960px;
   &:hover {
-    @include inspic(url("../img/feature_right.png") center bottom, -143px);
+    @include inspic(image-url("feature_right.png") center bottom, -143px);
     left: 960px;
   }
 }
@@ -590,7 +590,7 @@ footer {
   margin: 0 0 0 12px;
   height: 375px;
   width: 388px;
-  background-image: url("../img/fourAD.jpg");
+  background-image: image-url("fourAD.jpg");
   background-repeat: no-repeat;
 }
 @mixin part($url,$margin) {
@@ -607,29 +607,29 @@ footer {
     &:hover {
       width: 190px;
       height: 184px;
-      background-image: url($url);
+      background-image: image-url($url);
       background-repeat: no-repeat;
       background-position: left top;
     }
   }
 }
 .airport {
-  @include part("../img/air.png", 0 8px 7px 0);
+  @include part("air.png", 0 8px 7px 0);
 }
 .business {
-  @include part("../img/business.png", 0 0 7px);
+  @include part("business.png", 0 0 7px);
 }
 .chartered {
-  @include part("../img/tour.png", 0 8px 0 0);
+  @include part("tour.png", 0 8px 0 0);
 }
 .wedding {
-  @include part("../img/wedding.png", 0);
+  @include part("wedding.png", 0);
 }
 
 /*表單*/
 .form {
   padding: 30px 50px;
-  background-image: url("../img/note.gif");
+  background-image: image-url("note.gif");
   background-repeat: no-repeat;
   background-position: left top;
   height: 480px;
@@ -774,7 +774,7 @@ menu {
 
 /*首頁最新消息*/
 .indexService {
-  background-image: url("../img/news.gif");
+  background-image: image-url("news.gif");
   background-repeat: no-repeat;
   background-position: left top;
   padding-top: 53px;
@@ -816,7 +816,7 @@ menu {
 /*首頁上馬旅遊趣*/
 .tourList {
   padding-top: 53px;
-  background-image: url("../img/day.gif");
+  background-image: image-url("day.gif");
   background-repeat: no-repeat;
   background-position: left top;
   li {
