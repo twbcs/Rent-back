@@ -1,0 +1,9 @@
+<aside>
+  <menu>
+    <h3> <%= @rent.period == 1 ? "長期租車" : "短期租車" %> </h3>
+    <li><%= link_to "● 轎車", rents_path(period: @rent.period, cartype: 1) %></li>
+    <li><%= link_to "● 商用車", rents_path(period: @rent.period, cartype: 2) %></li>
+    <li><%= link_to "● 休旅車", rents_path(period: @rent.period, cartype: 3) %></li>
+  </menu>
+  <%= render "fside" %>
+</aside>

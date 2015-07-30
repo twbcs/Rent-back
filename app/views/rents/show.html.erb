@@ -1,2 +1,6 @@
-<h1>Rents#show</h1>
-<p>Find me in app/views/rents/show.html.erb</p>
+<%= render 'rsidei' %>
+
+<div class="path">
+  首頁/<%= @rent.period == 1 ? "長期租車" : "短期租車" %>/
+  <mark><%= car_type(@rent.cartype) %></mark>
+</div>
