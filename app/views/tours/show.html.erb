@@ -1,1 +1,17 @@
 <%= render 'tside' %>
+
+<artical>
+  <div class="path">
+    首頁/上馬旅遊趣/
+    <mark> <%= tour_nav(@tour.day) %> </mark>
+  </div>
+  <div class="tour">
+    <li>
+      <%= image_tag(@tour.picture, width: "383", height: "255") %>
+      <h3><%= @tour.title %></h3>
+      <p><%= @tour.short %></p>
+      <input onclick="javascript:history.back(1)" value="返回上頁" class="button2" type="submit" name="button" id="button">
+      <input onclick="javascript:scroller('contacts', 800);" class="button" type="submit" name="button" id="button" value="我有興趣　請聯絡我">
+    </li>
+
+  </div>
