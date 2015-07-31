@@ -1,1 +1,18 @@
 <%= render 'tside' %>
+<artical>
+  <div class="path">
+    首頁/上馬旅遊趣/
+    <mark> <%= tour_nav(params[:day].to_i) %> </mark>
+  </div>
+
+  <div class="tour">
+    <% @tours.each do |t| %>
+      <li>
+        <%= image_tag(t.picture, width: "383", height: "255") %>
+        <h3><%= t.title %></h3>
+        <p><%= t.short %></p>
+        <input onclick="location.href='<%= tour_path(t)%>'" value="詳細內容" class="button2" type="submit" name="button" id="button">
+      </li>
+    <% end %>
+  </div>
+</artical>
