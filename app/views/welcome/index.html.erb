@@ -28,16 +28,16 @@
 
 <dl class="Rfour">
   <dt class="airport">
-    <a alt="機場接送" href="PickupService01.htm" title="機場接送">機場接送</a>
+    <%= link_to "機場接送", welcome_pickupservicea_path, alt: "機場接送", title: "機場接送" %>
   </dt>
   <dt class="business">
-    <a alt="商務洽公" href="Business.htm" title="商務洽公">商務洽公</a>
+    <%= link_to "商務洽公", article_path(id: 5), alt: "商務洽公", title: "商務洽公" %>
   </dt>
   <dt class="chartered">
-    <a alt="旅遊包車" href="Chartered.htm" title="旅遊包車">旅遊包車</a>
+    <%= link_to "旅遊包車", article_path(id: 4), alt: "旅遊包車", title: "旅遊包車" %>
   </dt>
   <dt class="wedding">
-    <a alt="結婚禮車" href="Wedding.htm" title="結婚禮車">結婚禮車</a>
+    <%= link_to "結婚禮車", article_path(id: 6), alt: "結婚禮車", title: "結婚禮車" %>
   </dt>
 </dl>
 <div class="clear"></div>
