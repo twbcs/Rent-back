@@ -12,6 +12,9 @@ class WelcomeController < ApplicationController
     @messages = Message.where("date <= ?", DateTime.now ).order(date: :DESC).limit(5)
   end
 
+  def shangma
+  end
+
   def contact
     @response = Response.new
   end

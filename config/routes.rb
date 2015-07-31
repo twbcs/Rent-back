@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :admins
+
+  get 'welcome/shangma' => 'welcome#shangma'
+  get 'welcome/contact' => 'welcome#contact'
+  get 'welcome/pickupservicea' => 'welcome#pickupservicea'
+  get 'welcome/pickupserviceb' => 'welcome#pickupserviceb'
+  get 'welcome/pickupservicec' => 'welcome#pickupservicec'
+
   resources :articles, only: [:show]
   resources :tours, :rents, :messages, :adverts, only: [:index, :show]
   resources :responses, only: [:new, :create]
